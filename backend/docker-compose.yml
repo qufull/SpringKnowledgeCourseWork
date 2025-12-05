@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: spring_knowledge_db
+    restart: always
+    environment:
+      POSTGRES_DB: spring_knowledge
+      POSTGRES_USER: spring_user
+      POSTGRES_PASSWORD: spring_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
